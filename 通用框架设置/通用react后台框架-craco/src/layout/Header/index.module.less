@@ -1,0 +1,116 @@
+:global(.ant-layout-header) {
+  padding: 0px;
+}
+
+:global(.ant-menu-submenu-title) {
+  padding: 0 24px !important;
+}
+
+.headerTop {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 0 0;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.08);
+  /* 修改windows下的不撑开 */
+  & + :global(.ant-layout-content) {
+    flex: unset;
+    height: 100%;
+  }
+
+  .rightMenu {
+    display: flex;
+
+    .imgBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .bell {
+      font-size: 18px;
+    }
+
+    .tip {
+      display: flex;
+      align-items: center;
+      padding-right: 20px;
+      cursor: pointer;
+    }
+
+    .headerMenu {
+      float: right;
+      height: 64px;
+      line-height: 64px;
+      border: 0;
+
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #eee;
+      }
+    }
+  }
+}
+
+.menus {
+  padding: 10px 10px 10px 20px;
+
+  &:last-child {
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+      color: #1890ff;
+      cursor: pointer;
+    }
+  }
+
+  .menuTitle {
+    color: #000;
+    font-size: 13px;
+  }
+
+  .menucontent {
+    color: #eee;
+  }
+
+  .menuCap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+
+    &:hover {
+      div {
+        color: #1890ff;
+      }
+    }
+
+    div {
+      width: 100%;
+      height: 20px;
+      color: #aaa;
+    }
+
+    span {
+      color: #000;
+      font-weight: bold;
+      font-size: 13px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+// * 当前用户相关
+export const AUTH_LOGIN = 'AUTH_LOGIN';
+export type AUTH_LOGIN_TYPE = typeof AUTH_LOGIN;
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+export type AUTH_LOGOUT_TYPE = typeof AUTH_LOGOUT;
+export const SET_PLATFORM = 'SET_PLATFORM';
+export type SET_PLATFORM_TYPE = typeof SET_PLATFORM;
+export const SET_TOKEN = 'SET_TOKEN';
+export type SET_TOKEN_TYPE = typeof SET_TOKEN;
+export const RESET_USER = 'RESET_USER';
+export type RESET_USER_TYPE = typeof RESET_USER;
+export const SET_USER_LOGIN_INFO = 'SET_USER_LOGIN_INFO';
+export type SET_USER_LOGIN_INFO_TYPE = typeof SET_USER_LOGIN_INFO;
+export const SET_USER_INFO = 'SET_USER_INFO';
+export type SET_USER_INFO_TYPE = typeof SET_USER_INFO;
+export const SET_PERMS = 'SET_PERMS';
+export type SET_PERMS_TYPE = typeof SET_PERMS;
+
+// * 用户相关
+export const SET_MANAGE_LIST = 'SET_MANAGE_LIST';
+export type SET_MANAGE_LIST_TYPE = typeof SET_MANAGE_LIST;
+
+// * 系统相关
+export const SET_APP_TAG_LIST = 'SET_APP_TAG_LIST';
+export type SET_APP_TAG_LIST_TYPE = typeof SET_APP_TAG_LIST;
+
+export enum Types {
+  AUTH_LOGIN = 'AUTH_LOGIN',
+  AUTH_LOGOUT = 'AUTH_LOGOUT',
+  SET_PLATFORM = 'SET_PLATFORM',
+  USER_SET_TOKEN = 'USER_SET_TOKEN',
+  USER_RESET_USER = 'USER_RESET_USER',
+  SET_USER_LOGIN_INFO = 'SET_USER_LOGIN_INFO',
+  SET_USER_INFO = 'SET_USER_INFO',
+  SET_PERMS = 'SET_PERMS',
+  SET_MANAGE_LIST = 'SET_MANAGE_LIST',
+  SET_APP_TAG_LIST = 'SET_APP_TAG_LIST',
+}
