@@ -158,7 +158,7 @@ const transform: AxiosTransform = {
         console.log("网络错误")
       }
     } catch (error) {
-      throw new Error(error);
+      throw new Error(error as unknown as string);
     }
     checkStatus(error?.response?.status, msg);
     return Promise.reject(error);
