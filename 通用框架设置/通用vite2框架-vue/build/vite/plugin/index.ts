@@ -6,6 +6,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
 
 import PurgeIcons from 'vite-plugin-purge-icons';
+import windiCSS from 'vite-plugin-windicss';
+import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 
 import { configHtmlPlugin } from './html';
 import { configPwaConfig } from './pwa';
@@ -14,7 +16,6 @@ import { configStyleImportPlugin } from './styleImport';
 import { configVisualizerConfig } from './visualizer';
 import { configImageminPlugin } from './imagemin';
 import { configWindiCssPlugin } from './windicss';
-import { configHmrPlugin } from './hmr';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const {
@@ -30,10 +31,12 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     vue(),
     // have to
     vueJsx(),
+    // support name
+    vueSetupExtend(),
   ];
 
-  // 自定义热更新
-  !isBuild && vitePlugins.push(configHmrPlugin());
+  // vite-plugin-windicss
+  vitePlugins.push(windiCSS());
 
   // @vitejs/plugin-legacy
   VITE_LEGACY && isBuild && vitePlugins.push(legacy());
@@ -48,7 +51,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   vitePlugins.push(PurgeIcons());
 
   // vite-plugin-style-import
-  vitePlugins.push(configStyleImportPlugin());
+  vitePlugins.push(configStyleImportPlugin(isBuild));
 
   // rollup-plugin-visualizer
   vitePlugins.push(configVisualizerConfig());
