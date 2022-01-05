@@ -1,4 +1,4 @@
-import { MenuListProps } from '@/config/menuConfig'
+import {MenuListProps} from '@/config/menuConfig'
 
 /**
  * 通过属性在menuList获取对应的menuItem
@@ -85,9 +85,9 @@ export function treeDataTranslate(
   data: any[] | null,
   id = 'id',
   parentId = 'parentId',
-  addFields?: { [name: string]: any },
+  addFields?: {[name: string]: any},
 ) {
-  if (!data) return;
+  if (!data) return
   const res = []
   const temp: any = {}
   for (let i = 0; i < data.length; i++) {

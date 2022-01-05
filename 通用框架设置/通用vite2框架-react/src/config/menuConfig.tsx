@@ -40,7 +40,7 @@ const MenuList: MenuListProps[] = [
     path: '/dashboard',
     title: '首页',
     icon: 'home',
-  }
+  },
 ]
 
 export const commonMenuList: MenuListProps[] = []

@@ -1,8 +1,8 @@
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
-import { message, Modal } from 'antd'
+import axios, {AxiosError, AxiosRequestConfig, AxiosResponse} from 'axios'
+import {message, Modal} from 'antd'
 import store from 'store/index'
-import { logout } from 'store/actions'
-import config, { EnvName } from 'root/config'
+import {logout} from 'store/actions'
+import config, {EnvName} from 'root/config'
 
 function dispatchLogout() {
   Modal.confirm({

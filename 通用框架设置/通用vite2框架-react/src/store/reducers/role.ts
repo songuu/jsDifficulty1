@@ -1,8 +1,11 @@
 import * as types from '../action-types'
-import { RootActions } from '../actions'
-import { RoleProps } from 'apis/models/roleModel'
+import {RootActions} from '../actions'
+import {RoleProps} from 'apis/models/roleModel'
 
-export type roleSelectListProps = Pick<RoleProps<number[]>, 'id' | 'roleCode' | 'roleName'>[]
+export type roleSelectListProps = Pick<
+  RoleProps<number[]>,
+  'id' | 'roleCode' | 'roleName'
+>[]
 
 export interface RoleStateProps {
   roleSelectList: roleSelectListProps

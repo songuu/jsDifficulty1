@@ -2,15 +2,14 @@ import React from 'react'
 import {Form, Button, Input, Spin, notification} from 'antd'
 import {login} from 'store/actions'
 import {connect} from 'react-redux'
-import {RouteComponentProps, withRouter} from 'react-router'
+import {useNavigate} from 'react-router-dom'
 import Icon from 'comps/Icon'
 import {HttpStatusCode} from 'apis/index'
 import './index.less'
 
-type ILoginProps = RouteComponentProps
-
-const Login: React.FC<ILoginProps & ActionProps> = props => {
-  const {login, history} = props
+const Login: React.FC<ActionProps> = props => {
+  const navigate = useNavigate()
+  const {login} = props
 
   const formSubmit = (values: any) => {
     login(values.username.trim(), values.password.trim()).then((data: any) => {
@@ -20,7 +19,7 @@ const Login: React.FC<ILoginProps & ActionProps> = props => {
           description: '欢迎回来',
           duration: 3,
         })
-        history.push('/dashboard')
+        navigate('/dashboard')
       }
     })
   }
@@ -75,4 +74,4 @@ interface ActionProps {
   login: any
 }
 
-export default connect(null, {login})(withRouter(Login))
+export default connect(null, {login})(Login)

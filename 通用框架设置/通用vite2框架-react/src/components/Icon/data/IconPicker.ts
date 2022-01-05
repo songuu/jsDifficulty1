@@ -66,5 +66,5 @@ export default [
   'AppstoreOutlined',
   'ShopOutlined',
   'MenuOutlined',
-  'TeamOutlined'
+  'TeamOutlined',
 ] as IconPickerName[]

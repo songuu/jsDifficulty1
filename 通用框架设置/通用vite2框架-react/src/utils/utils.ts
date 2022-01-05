@@ -97,7 +97,7 @@ export function filterObjFields(obj: object, keys: string[]) {
       o[key] = (obj as any)[key]
     }
     return o
-  }, {} as { [key: string]: any })
+  }, {} as {[key: string]: any})
 }
 
 /**
@@ -106,12 +106,15 @@ export function filterObjFields(obj: object, keys: string[]) {
  * @returns
  */
 export function filterParam(obj: any) {
-  var _newPar: any = {};
-  for (var key in obj) {
+  const _newPar: any = {}
+  for (const key in obj) {
     //如果对象属性的值不为空，就保存该属性（这里我做了限制，如果属性的值为0，保存该属性。如果属性的值全部是空格，属于为空。
-    if ((obj[key] === 0 || obj[key] === false || obj[key]) && obj[key].toString().replace(/(^\s*)|(\s*$)/g, '') !== '') {
-      _newPar[key] = obj[key];
+    if (
+      (obj[key] === 0 || obj[key] === false || obj[key]) &&
+      obj[key].toString().replace(/(^\s*)|(\s*$)/g, '') !== ''
+    ) {
+      _newPar[key] = obj[key]
     }
   }
-  return _newPar;
+  return _newPar
 }

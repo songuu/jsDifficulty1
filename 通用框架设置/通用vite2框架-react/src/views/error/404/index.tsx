@@ -1,13 +1,13 @@
 import React, {memo} from 'react'
 import {Row, Col, Button} from 'antd'
 import notFound from 'assets/images/404.png'
-import {useHistory} from 'react-router'
+import {useNavigate} from 'react-router'
 import './index.less'
 
 interface INotFoundProps {}
 
 const NotFound: React.FC<INotFoundProps> = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
   return (
     <div className="not-found-page">
       <Row>
@@ -17,7 +17,7 @@ const NotFound: React.FC<INotFoundProps> = () => {
         <Col span={12} className="right">
           <h1>404</h1>
           <h2>抱歉，你访问的页面不存在</h2>
-          <Button type="primary" onClick={() => history.go(-1)}>
+          <Button type="primary" onClick={() => navigate(-1)}>
             返回
           </Button>
         </Col>

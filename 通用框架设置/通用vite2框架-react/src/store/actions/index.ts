@@ -1,6 +1,6 @@
-import { Types } from '../action-types'
-import { Dispatch } from 'react'
-import { Action, AnyAction } from 'redux'
+import {Types} from '../action-types'
+import {Dispatch} from 'react'
+import {Action, AnyAction} from 'redux'
 import {
   sidebarCollapsedToggle,
   showRightPanelToggle,
@@ -22,8 +22,8 @@ import {
   weekModeToggle,
   grayModeToggle,
 } from './settings'
-import { setUserToken, UserAction, getUserinfo } from './user'
-import { login, logout, AuthAction } from './auth'
+import {setUserToken, UserAction, getUserinfo} from './user'
+import {login, logout, AuthAction} from './auth'
 import {
   addTagsView,
   removeTagsView,
@@ -31,7 +31,7 @@ import {
   closeOthersTagView,
   TagsViewActions,
 } from './tagsView'
-import { getSelectRoleList, RoleAction } from './role'
+import {getSelectRoleList, RoleAction} from './role'
 
 /** 自定义通用同步Action */
 export interface CommonAction<T = any> {
@@ -49,7 +49,7 @@ export interface CommonAsyncActionCreator<
   T = any,
   R = any,
   A extends Action = AnyAction,
-  > {
+> {
   (options?: T): (dispatch: Dispatch<A>) => R
 }
 

@@ -1,5 +1,5 @@
 import React, {Suspense} from 'react'
-import {Redirect, Route, Switch, BrowserRouter} from 'react-router-dom'
+import {Route, Routes, Navigate, BrowserRouter} from 'react-router-dom'
 import {Login} from 'views/index'
 import Layout from '@/layout'
 import {connect} from 'react-redux'
@@ -22,14 +22,14 @@ const Router: React.FC<IRouterProps> = props => {
   return (
     <BrowserRouter>
       <Suspense fallback={<AppLoading />}>
-        <Switch>
-          <Route path="/login" exact component={Login} />
+        <Routes>
+          <Route path="/login" element={<Login />} />
           <Route
             path="/"
-            render={props => {
+            element={(props: {history: string[]}) => {
               // 不存在token
               if (!token) {
-                return <Redirect to="/login" />
+                return <Navigate to="/login" />
               }
 
               // 未登录，或者没有权限
@@ -56,7 +56,7 @@ const Router: React.FC<IRouterProps> = props => {
               }
             }}
           />
-        </Switch>
+        </Routes>
       </Suspense>
     </BrowserRouter>
   )

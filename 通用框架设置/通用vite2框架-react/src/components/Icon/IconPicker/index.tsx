@@ -83,7 +83,9 @@ const IconPicker: React.FC<IIconPickerProps> = forwardRef((props, ref) => {
   }, [IconPickerData, searchIcon])
 
   /** 处理搜索图标 */
-  const handleSearchIcon: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleSearchIcon: ChangeEventHandler<HTMLInputElement> = (
+    e: ChangeEvent<HTMLInputElement>,
+  ) => {
     const value = e.target.value.trim()
     setSearchIcon(value)
   }

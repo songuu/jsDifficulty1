@@ -33,7 +33,7 @@ import {
   AppstoreOutlined,
   ShopOutlined,
   MenuOutlined,
-  TeamOutlined
+  TeamOutlined,
 } from '@ant-design/icons'
 
 export type IconName =
@@ -111,7 +111,7 @@ const AntdIcons: AntdIconsProps = {
   AppstoreOutlined: <AppstoreOutlined />,
   ShopOutlined: <ShopOutlined />,
   MenuOutlined: <MenuOutlined />,
-  TeamOutlined: <TeamOutlined />
+  TeamOutlined: <TeamOutlined />,
 }
 
 export default AntdIcons

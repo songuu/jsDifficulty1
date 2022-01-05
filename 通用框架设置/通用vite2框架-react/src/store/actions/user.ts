@@ -1,8 +1,8 @@
 import * as types from '../action-types'
-import { getUserInfo } from 'apis/user'
-import { Dispatch } from 'redux'
-import { HttpStatusCode, ResponseData } from 'apis/index'
-import { UserStateProps } from '../reducers/user'
+import {getUserInfo} from 'apis/user'
+import {Dispatch} from 'redux'
+import {HttpStatusCode, ResponseData} from 'apis/index'
+import {UserStateProps} from '../reducers/user'
 
 export interface ISetTokenAction {
   type: types.SET_TOKEN_TYPE
@@ -49,26 +49,26 @@ export const setUserinfo = (userinfo: UserStateProps): ISetUserinfoAction => {
 
 export const getUserinfo =
   () =>
-    (dispatch: Dispatch): Promise<any> => {
-      return new Promise((resolve, reject) => {
-        getUserInfo()
-          .then(response => {
-            const data = response.data as ResponseData
-            if (data.code === HttpStatusCode.OK) {
-              setTimeout(() => {
-                const userinfo = data.data
-                dispatch(setUserinfo(userinfo))
-                resolve(data)
-              }, 300)
-            } else {
-              reject(data.msg)
-            }
-          })
-          .catch(error => {
-            reject(error)
-          })
-      })
-    }
+  (dispatch: Dispatch): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      getUserInfo()
+        .then(response => {
+          const data = response.data as ResponseData
+          if (data.code === HttpStatusCode.OK) {
+            setTimeout(() => {
+              const userinfo = data.data
+              dispatch(setUserinfo(userinfo))
+              resolve(data)
+            }, 300)
+          } else {
+            reject(data.msg)
+          }
+        })
+        .catch(error => {
+          reject(error)
+        })
+    })
+  }
 
 export type UserAction =
   | ISetTokenAction
