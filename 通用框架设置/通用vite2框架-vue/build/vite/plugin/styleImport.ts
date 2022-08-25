@@ -4,13 +4,13 @@
  * @LastEditor: songyu
  * @LastEditTime: 2021-06-17 15:20:43
  */
-import styleImport from 'vite-plugin-style-import';
+import {createStyleImportPlugin} from 'vite-plugin-style-import';
 
 export function configStyleImportPlugin(isBuild: boolean) {
   if(!isBuild) {
     return [];
   }
-  const styleImportPlugin = styleImport({
+  const styleImportPlugin = createStyleImportPlugin({
     libs: [
       {
         libraryName: 'ant-design-vue',

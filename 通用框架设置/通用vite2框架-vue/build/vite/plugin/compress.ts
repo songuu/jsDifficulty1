@@ -1,11 +1,11 @@
-import type { Plugin } from 'vite';
+import type { PluginOption } from 'vite';
 
 import compressPlugin from 'vite-plugin-compression';
 
-export function configCompressPlugin(compress: 'gzip' | 'brotli' | 'none', deleteOriginFile = false): Plugin | Plugin[] {
+export function configCompressPlugin(compress: 'gzip' | 'brotli' | 'none', deleteOriginFile = false): PluginOption | PluginOption[] {
   const compressList = compress.split(',');
 
-  const plugins: Plugin[] = [];
+  const plugins: PluginOption[] = [];
 
   if (compressList.includes('gzip')) {
     plugins.push(

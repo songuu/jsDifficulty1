@@ -83,17 +83,23 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       // 当前app信息显示
       __APP_INFO__: JSON.stringify(__APP_INFO__)
     },
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
+      },
+    },
     plugins: createVitePlugins(viteEnv, isBuild),
     optimizeDeps: {
       // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
       include: [
+        '@vue/runtime-core',
+        '@vue/shared',
         '@iconify/iconify',
         'ant-design-vue/es/locale/zh_CN',
-        'moment/dist/locale/zh-cn',
         'ant-design-vue/es/locale/en_US',
-        'moment/dist/locale/eu',
-      ],
-      exclude: ['vue-demi'],
+      ]
     },
   }
 }
