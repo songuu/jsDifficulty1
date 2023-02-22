@@ -1,9 +1,3 @@
-/*
- * @Author: songyu
- * @Date: 2021-06-13 11:45:12
- * @LastEditor: songyu
- * @LastEditTime: 2021-07-06 11:48:20
- */
 // * 可选链
 const person = {
   firstName: "Lydia",

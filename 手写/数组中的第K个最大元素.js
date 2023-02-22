@@ -1,9 +1,3 @@
-/*
- * @Author: songyu
- * @Date: 2021-06-03 22:21:54
- * @LastEditor: songyu
- * @LastEditTime: 2021-06-03 22:48:26
- */
 // 大顶堆
 // 快速排序
 // 归并排序

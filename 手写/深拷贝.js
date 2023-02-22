@@ -1,9 +1,3 @@
-/*
- * @Author: songyu
- * @Date: 2021-06-01 09:11:46
- * @LastEditor: songyu
- * @LastEditTime: 2021-06-09 08:40:51
- */
 // * 1 使用递归
 const cloneDeep1 = (target, hash = new WeakMap()) => {
   // 对于传入参数处理
@@ -44,7 +38,7 @@ function isObject(val) {
   return typeof val === "object" && val !== null;
 }
 
-function deepClone(obj, hash = new WeakMap()) {
+function cloneDeep(obj, hash = new WeakMap()) {
   if (!isObject(obj)) return obj;
   if (hash.has(obj)) {
     return hash.get(obj);
@@ -53,7 +47,7 @@ function deepClone(obj, hash = new WeakMap()) {
   hash.set(obj, target);
   Reflect.ownKeys(obj).forEach((item) => {
     if (isObject(obj[item])) {
-      target[item] = deepClone(obj[item], hash);
+      target[item] = cloneDeep(obj[item], hash);
     } else {
       target[item] = obj[item];
     }
@@ -61,3 +55,18 @@ function deepClone(obj, hash = new WeakMap()) {
 
   return target;
 }
+
+const obj = {
+  a: {
+    a: 1,
+    b: 2,
+  },
+  b: [],
+  c: 3,
+  d: new Map(),
+  e: new Set(),
+}
+
+const a = cloneDeep1(obj)
+
+console.log(typeof new Map());

@@ -1,11 +1,3 @@
-/*
- * @Author: songyu
- * @Date: 2021-07-08 20:35:15
- * @LastEditTime: 2021-07-08 22:57:23
- * @LastEditors: songyu
- * @Description:
- * @FilePath: \项目文件\jsDifficulty\手写\计算多个区间的交集.js
- */
 /**
  * 1.计算多个区间的交集
  *   区间用长度为2的数字数组表示，如[2, 5]表示区间2到5（包括2和5）；
@@ -39,6 +31,7 @@ function getIntersection() {
   //   return hash[0] === hash[1] &&  ? null : hash;
 }
 
+// 计算范围值数量大于1的数
 const getIntersection1 = function () {
   var result = {};
   var lists;
@@ -63,6 +56,7 @@ const getIntersection1 = function () {
 
       // result[j]=(result[j] || 0)+1
     }
+    console.log("result", result);
   }
 
   let keys = Object.keys(result);
@@ -71,6 +65,7 @@ const getIntersection1 = function () {
   console.log(keys.length ? keys : null);
 };
 
-let res = getIntersection1([-1, 0], [0, 9]);
+// let res = getIntersection([-1, 0], [0, 9]);
+let res = getIntersection1([5, 2], [4, 9], [3, 6]);
 
-// console.log(res);
+console.log(res);

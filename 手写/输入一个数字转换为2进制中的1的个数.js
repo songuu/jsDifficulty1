@@ -7,7 +7,9 @@
 function NumberOf11(num) {
     let flag = 0;
     while (num != 0) {
+        console.log("before", num)
         num = num & (num - 1); //
+        console.log("after", num)
         flag += 1;
     }
 
@@ -32,6 +34,6 @@ function NumberOf12(num) {
     return flag;
 }
 
-// let a = NumberOf12(10)
+let a = NumberOf11(10)
 
-// console.log(a)
+console.log(a)

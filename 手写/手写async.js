@@ -68,4 +68,14 @@ function asyncToGenerator(generatorFunc) {
   };
 }
 
+const testG = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("success");
+    }, 1000);
+  })
+}
+
 var test = asyncToGenerator(testG)
+
+test().then(res => console.log(res))

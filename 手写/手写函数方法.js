@@ -1,11 +1,3 @@
-/*
- * @Author: songyu
- * @Date: 2021-05-31 20:47:42
- * @LastEditTime: 2021-07-05 21:11:33
- * @LastEditors: songyu
- * @LastEditTime: 2021-06-07 11:22:19
- * @FilePath: \项目文件\jsDifficulty\手写\手写函数方法.js
- */
 Function.prototype.apply = function (context = window, args) {
   if (typeof this !== 'function') {
     throw new TypeError('类型错误')
@@ -33,7 +25,7 @@ Function.prototype.myApply = function (context, args) {
   return context[fn](...args);
 };
 
-Function.prototype.call = function (context = window, args) {
+Function.prototype.call = function (context = window, ...args) {
   if (typeof this !== 'function') {
     throw new TypeError('类型错误')
   }
