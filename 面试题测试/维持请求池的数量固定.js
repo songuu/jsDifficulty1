@@ -1,11 +1,3 @@
-/*
- * @Author: songyu
- * @Date: 2021-06-08 21:44:52
- * @LastEditTime: 2021-06-08 21:47:47
- * @LastEditors: songyu
- * @Description: 
- * @FilePath: \项目文件\jsDifficulty\面试题测试\维持请求池的数量固定.js
- */
 function multiRequest(urls, maxNum) {
     const len = urls.length; // 请求总数量
     const res = new Array(len).fill(0); // 请求结果数组
